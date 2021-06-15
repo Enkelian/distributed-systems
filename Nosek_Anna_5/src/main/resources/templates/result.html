@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Epic vs Steam</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<h1>Game price comparator</h1>
+<h2>EPIC vs STEAM vs BEST DEAL</h2>
+<table>
+  <tr>
+    <th>Game name</th>
+    <th>Who's got better deal?</th>
+    <th>Better deal price</th>
+    <th>Price difference</th>
+    <th>Who's got the best deal?</th>
+    <th>Best deal price</th>
+  </tr>
+  <tr th:each="res : ${results}">
+    <th th:text="${res.getGameName()}"></th>
+    <th th:text="${res.getBetterStoreName()}"></th>
+    <th th:text="${res.getBetterPrice()}"></th>
+    <th th:text="${res.getDifference()}"></th>
+    <th th:text="${res.getBestStoreName()}"></th>
+    <th th:text="${res.getBestPrice()}"></th>
+  </tr>
+</table>
+</body>
+
+</html>

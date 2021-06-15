@@ -1,0 +1,6 @@
+IceGrid.Registry.Client.Endpoints=tcp -p 12000
+IceGrid.Registry.Server.Endpoints=tcp
+IceGrid.Registry.Internal.Endpoints=tcp
+IceGrid.Registry.LMDB.Path=main/resources/db/registry
+
+IceGrid.Registry.DynamicRegistration=1

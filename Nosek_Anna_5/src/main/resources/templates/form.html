@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Epic vs Steam</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+  <h1>Game price comparator</h1>
+  <h2>EPIC vs STEAM vs BEST DEAL</h2>
+  <form method="POST" th:action="@{/}">
+    <label>
+      <input type="text" th:value="${gameName}" th:name="gameName"/>
+    </label>
+    <button>Submit</button>
+  </form>
+</body>
+
+</html>

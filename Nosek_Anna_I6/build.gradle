@@ -1,0 +1,113 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+//    implementation group: 'org.glassfish', name: 'javax.servlet', version: '3.1.1'
+    implementation group: 'javax.annotation', name: 'javax.annotation-api', version: '1.3.2'
+    implementation group: 'io.grpc', name: 'grpc-all', version: '1.38.0'
+
+}
+
+sourceSets.main.java.srcDirs = ['src/main/gen','src/main/java']
+
+
+test {
+    useJUnitPlatform()
+}
+
+apply plugin : "java"
+ext {
+    calculator = "sr.grpc.server.CalculatorServer"
+    advancedCalculator = "sr.grpc.server.AdvancedCalculatorServer"
+    streamTester = "sr.grpc.server.StreamTesterServer"
+    server1 = "sr.grpc.server.grpcServer"
+    client = "sr.grpc.client.grpcClient"
+}
+
+
+//task runServer1(type: JavaExec) {
+//    group = "Execution"
+//    classpath = sourceSets.main.runtimeClasspath
+//    main = server1
+//    args(50050)
+//}
+
+task runCalculator1(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = calculator
+    args(50060)
+}
+
+task runCalculator2(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = calculator
+    args(50061)
+}
+
+task runCalculator3(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = calculator
+    args(50062)
+}
+
+task runAdvancedCalculator1(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = advancedCalculator
+    args(50070)
+}
+
+task runAdvancedCalculator2(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = advancedCalculator
+    args(50071)
+}
+
+task runAdvancedCalculator3(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = advancedCalculator
+    args(50072)
+}
+
+
+task runStreamTester1(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = streamTester
+    args(50080)
+}
+
+task runStreamTester2(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = streamTester
+    args(50081)
+}
+
+task runStreamTester3(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = streamTester
+    args(50082)
+}
+
+task runClient(type: JavaExec) {
+    group = "Execution"
+    classpath = sourceSets.main.runtimeClasspath
+    main = client
+}
